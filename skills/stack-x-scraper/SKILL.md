@@ -1,3 +1,4 @@
+---
 name: stack-x-scraper
 description: |
   A compound skill (stack) that provisions a Hetzner Cloud instance as a persistent database and uses Apify to collect X (Twitter) data at high frequencies.
