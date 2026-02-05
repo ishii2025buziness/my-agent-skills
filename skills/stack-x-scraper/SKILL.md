@@ -1,16 +1,19 @@
----
 name: stack-x-scraper
 description: |
-  A compound skill (stack) that provisions a Hetzner Cloud instance as a persistent database and uses Apify to collect X (Twitter) data at high frequencies. 
-  Orchestrates 'provider-hetzner' and 'collector-x-apify'.
+  A compound skill (stack) that provisions a Hetzner Cloud instance as a persistent database and uses Apify to collect X (Twitter) data at high frequencies.
+requires:
+  - provider-hetzner
+  - collector-x-apify
 allowed-tools: Bash Node Python
 ---
 
 # Stack: X-Scraper (Hetzner + Apify)
 
-このスキルは、インフラ構築（Hetzner）とデータ収集（Apify）を組み合わせた上位の「スタック」を定義します。
+このスキルは、以下の2つの Atomic Skills を疎結合に組み合わせて（Orchestration）実行されます。
 
-## 構成コンポーネント
+## 依存関係 (Dependencies)
+- **[provider-hetzner](../provider-hetzner/SKILL.md)**: インフラ構築エンジン
+- **[collector-x-apify](../collector-x-apify/SKILL.md)**: データ収集エンジン
 1.  **Storage Engine**: `provider-hetzner` を使用して、収集データを永続化するARM64サーバーを確保。
 2.  **Collection Engine**: `collector-x-apify` を使用して、以下のモードでデータを取得：
     - Search (演算子検索)
