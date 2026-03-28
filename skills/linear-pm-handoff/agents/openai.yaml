@@ -1,0 +1,4 @@
+interface:
+  display_name: "Linear PM Handoff"
+  short_description: "Make Linear issues handoff-ready with resume guidance"
+  default_prompt: "Linear issue を引き継ぎ可能な形に整えてください。"
